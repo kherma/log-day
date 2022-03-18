@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { CgDarkMode } from "react-icons/cg";
 
 const ThemeSwitch = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -18,8 +19,11 @@ const ThemeSwitch = () => {
       : setTheme("dark");
   }, []);
   return (
-    <button onClick={() => setTheme(darkMode ? "light" : "dark")}>
-      Change Theme
+    <button
+      aria-label={`Change theme to ${darkMode ? "light" : "dark"}`}
+      onClick={() => setTheme(darkMode ? "light" : "dark")}
+    >
+      <CgDarkMode className="w-10 h-10 sm:w-12 sm:h-12" />
     </button>
   );
 };

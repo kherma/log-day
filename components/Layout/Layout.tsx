@@ -7,7 +7,7 @@ const Layout = ({ page, children }: TLayoutProps) => {
   return (
     <div>
       <Head>
-        <title>{pagesData[page].title}</title>
+        <title>{`${pagesData[page].title} | logDAY`}</title>
         <meta name="description" content={pagesData[page].description} />
       </Head>
       <Header />
