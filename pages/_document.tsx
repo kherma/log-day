@@ -4,7 +4,7 @@ import Document, {
   Main,
   NextScript,
   DocumentContext,
-} from 'next/document';
+} from "next/document";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -14,11 +14,11 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang='en'>
+      <Html lang="en">
         <Head>
           <link
-            href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap'
-            rel='stylesheet'
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+            rel="stylesheet"
           />
         </Head>
         <body>
