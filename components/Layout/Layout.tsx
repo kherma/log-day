@@ -5,13 +5,15 @@ import Header from "../Header/Header";
 
 const Layout = ({ page, children }: TLayoutProps) => {
   return (
-    <div>
+    <div className="grid grid-rows-[auto,1fr] h-screen">
       <Head>
         <title>{`${pagesData[page].title} | logDAY`}</title>
         <meta name="description" content={pagesData[page].description} />
       </Head>
       <Header />
-      <main>{children}</main>
+      <main className="dark:text-white bg-neutral-200 dark:bg-neutral-900 transition-colors duration-300 ease-in-out">
+        {children}
+      </main>
     </div>
   );
 };
