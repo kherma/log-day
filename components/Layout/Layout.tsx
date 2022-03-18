@@ -1,21 +1,17 @@
-import { FC } from "react";
-import { TLayoutProps } from "./types";
 import Head from "next/head";
+import { TLayoutProps } from "./types";
 import { pagesData } from "../../config";
+import Header from "../Header/Header";
 
-const Layout: FC<TLayoutProps> = ({ page, children }) => {
-  return (
-    <div>
-      <Head>
-        <title>{pagesData[page].title}</title>
-        <meta name="description" content={pagesData[page].description} />
-      </Head>
-      <header>
-        <h1>DayLog+</h1>
-      </header>
-      <main>{children}</main>
-    </div>
-  );
-};
+const Layout = ({ page, children }: TLayoutProps) => (
+  <div>
+    <Head>
+      <title>{pagesData[page].title}</title>
+      <meta name="description" content={pagesData[page].description} />
+    </Head>
+    <Header />
+    <main>{children}</main>
+  </div>
+);
 
 export default Layout;
