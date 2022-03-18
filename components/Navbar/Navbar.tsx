@@ -9,7 +9,7 @@ const Navbar = () => (
         <Logo />
       </a>
     </Link>
-    <Link href="/">
+    <Link href="/reports">
       <a aria-label="Go to reports page">
         <BsBarChartLineFill className="w-8 h-8 sm:w-10 sm:h-10" />
       </a>
