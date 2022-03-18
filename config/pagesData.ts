@@ -7,8 +7,8 @@ type TPagesData = {
 
 export const pagesData: TPagesData = {
   home: {
-    title: "DayLog+",
+    title: "DayLog",
     description:
-      "Welcome do DayLog+. App made for tracking day-to-day tasks becouse I hate Breeze.",
+      "Welcome do DayLog. App made for tracking day-to-day tasks becouse I hate Breeze.",
   },
 };
