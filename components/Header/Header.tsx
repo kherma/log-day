@@ -2,9 +2,11 @@ import Navbar from "../Navbar/Navbar";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 
 const Header = () => (
-  <header className="grid grid-cols-[1fr,auto] py-2 px-4 w-full dark:text-white bg-white dark:bg-black shadow-lg transition-colors duration-300 ease-in-out sm:py-4 sm:px-8">
-    <Navbar />
-    <ThemeSwitch />
+  <header className="py-2 px-4 dark:text-white bg-white dark:bg-black shadow-lg transition-colors duration-300 ease-in-out sm:py-4 sm:px-8">
+    <div className="grid grid-cols-[1fr,auto] mx-auto max-w-layout">
+      <Navbar />
+      <ThemeSwitch />
+    </div>
   </header>
 );
 

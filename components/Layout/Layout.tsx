@@ -11,7 +11,7 @@ const Layout = ({ page, children }: TLayoutProps) => {
         <meta name="description" content={pagesData[page].description} />
       </Head>
       <Header />
-      <main className="dark:text-white bg-neutral-200 dark:bg-neutral-900 transition-colors duration-300 ease-in-out">
+      <main className="p-4 dark:text-white bg-neutral-200 dark:bg-neutral-900 transition-colors duration-300 ease-in-out">
         {children}
       </main>
     </div>

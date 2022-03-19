@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         sans: ["Roboto", "sans-serif"],
       },
+      maxWidth: {
+        layout: "1440px",
+      },
     },
   },
   plugins: [],
