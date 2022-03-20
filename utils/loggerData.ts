@@ -6,6 +6,7 @@ type TTimer = {
 
 export type TLoggerData = {
   dayStarted: boolean;
+  total?: Date;
   timers: TTimer[];
 };
 
