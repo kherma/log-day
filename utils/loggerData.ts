@@ -4,7 +4,7 @@ type TTimer = {
   isRunning: boolean;
 };
 
-type TLoggerData = {
+export type TLoggerData = {
   dayStarted: boolean;
   timers: TTimer[];
 };

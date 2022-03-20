@@ -9,7 +9,6 @@ const DayHeading = ({ currentDay }: TDayHeadingProps) => {
 
   return (
     <h1>
-      <span>Friday</span>
       <span>03.02</span>
     </h1>
   );

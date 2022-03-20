@@ -8,12 +8,18 @@ const Home: NextPage = () => {
   const [logger, setLogger] = useState(loggerData);
 
   useEffect(() => {
-    setLogger(loggerData);
+    const loggerBE = localStorage.getItem("loggerBE");
+    setLogger(loggerBE ? JSON.parse(loggerBE) : loggerData);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("loggerBE", JSON.stringify(logger));
+  }, [logger]);
+
   return (
     <Layout page="home">
       <div className="overflow-hidden p-2 mx-auto max-w-layout h-full text-black dark:text-white bg-white dark:bg-black rounded-lg">
-        {!logger.dayStarted && <WelcomeMessage />}
+        {!logger.dayStarted && <WelcomeMessage setLogger={setLogger} />}
       </div>
     </Layout>
   );

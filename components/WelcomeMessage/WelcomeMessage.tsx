@@ -1,24 +1,11 @@
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import { getDayName } from "../../utils";
+import { TWelcomeMessageProps } from "./types";
+import ButtonStartDay from "../ButtonStartDay/ButtonStartDay";
 
-const WelcomeMessage = () => {
-  const [currentWeekDay, setCurrentWeekDay] = useState("");
-
-  useEffect(() => {
-    const currentDay = getDayName(new Date(), "en-EN");
-    setCurrentWeekDay(currentDay.toLowerCase());
-  }, []);
+const WelcomeMessage = ({ setLogger }: TWelcomeMessageProps) => {
   return (
     <div className="flex flex-col gap-8 justify-center items-center w-full h-full">
       <h1 className="text-4xl font-black uppercase">Hello World</h1>
-      <div className="overflow-hidden relative w-4/5 h-60 rounded-lg shadow-lg">
-        <Image
-          src={`/memeDay/${currentWeekDay}.webp`}
-          alt="Meme of the day"
-          layout="fill"
-        />
-      </div>
+      <ButtonStartDay setLogger={setLogger} />
     </div>
   );
 };
