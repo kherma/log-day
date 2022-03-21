@@ -1,8 +1,8 @@
 const Logo = () => (
-  <span className="p-1 text-3xl sm:text-5xl">
+  <h1 className="p-1 text-3xl sm:text-5xl">
     <span className="font-black">log</span>
     <sub className="uppercase">day</sub>
-  </span>
+  </h1>
 );
 
 export default Logo;
