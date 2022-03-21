@@ -8,7 +8,7 @@ const ButtonFinishDay = ({ setLogger }: TButtonFinishDayProps) => {
   };
   return (
     <button
-      className="py-2 px-4 w-full h-min font-bold text-black uppercase bg-blue-500 rounded-lg"
+      className="py-2 px-4 w-full h-min font-bold text-black uppercase bg-orange-500"
       onClick={finishDay}
     >
       Finish Day
