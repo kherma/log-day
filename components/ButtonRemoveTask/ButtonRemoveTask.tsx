@@ -8,10 +8,6 @@ const ButtonRemoveTask = ({
 }: TButtonRemoveTaskProps) => {
   const removeTask = () => {
     const timers = logger.timers.filter((timer) => timer.name !== name);
-    const isDeletedTimerRunning = logger.timers.find(
-      (timer) => timer.name === name && timer.isRunning
-    );
-    if (isDeletedTimerRunning) timers[0].isRunning = true;
     setLogger((prevState) => ({ ...prevState, timers }));
   };
 

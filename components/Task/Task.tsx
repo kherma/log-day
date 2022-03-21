@@ -1,6 +1,7 @@
 import { TTaskProps } from "./types";
 import Timer from "../Timer/Timer";
 import ButtonPauseTask from "../ButtonPauseTask/ButtonPauseTask";
+import ButtonStartTask from "../ButtonStartTask/ButtonStartTask";
 import ButtonRemoveTask from "../ButtonRemoveTask/ButtonRemoveTask";
 import clsx from "clsx";
 
@@ -14,13 +15,13 @@ const Task = ({ name, started, isRunning, setLogger, logger }: TTaskProps) => {
     >
       <p className="overflow-hidden max-w-[8rem] text-ellipsis">{name}</p>
       <div className="flex gap-4 justify-between items-center ">
-        {name !== "misc" && (
+        {isRunning ? (
           <ButtonPauseTask logger={logger} setLogger={setLogger} name={name} />
+        ) : (
+          <ButtonStartTask logger={logger} setLogger={setLogger} name={name} />
         )}
         <Timer date={started} isRunning={isRunning} />
-        {name !== "misc" && (
-          <ButtonRemoveTask name={name} logger={logger} setLogger={setLogger} />
-        )}
+        <ButtonRemoveTask name={name} logger={logger} setLogger={setLogger} />
       </div>
     </li>
   );

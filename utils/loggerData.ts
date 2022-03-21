@@ -2,7 +2,6 @@ export type TTimer = {
   name: string;
   started: Date;
   breakStart: Date | null;
-  breakEnds: Date | null;
   isRunning: boolean;
 };
 

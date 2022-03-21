@@ -16,9 +16,12 @@ const AddTask = ({ logger, setLogger, setIsAddTaskModal }: TAddTaskProps) => {
       isRunning: true,
       started: new Date(),
       breakStart: null,
-      breakEnds: null,
     };
-    const timers = logger.timers.map((item) => ({ ...item, isRunning: false }));
+    const timers = logger.timers.map((timer) => ({
+      ...timer,
+      breakStart: timer.isRunning ? new Date() : timer.breakStart,
+      isRunning: false,
+    }));
     timers.push(newTask);
     setLogger((prevState) => ({ ...prevState, timers }));
     setIsAddTaskModal(false);

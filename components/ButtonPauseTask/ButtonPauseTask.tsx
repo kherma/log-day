@@ -9,9 +9,10 @@ const ButtonPauseTask = ({
 }: TButtonPauseTasksProps) => {
   const pauseTask = () => {
     const timers = logger.timers.map((item) => {
-      const isRunning = item.name === name ? !item.isRunning : item.isRunning;
-      const breakStart = new Date();
-      return { ...item, isRunning, breakStart };
+      if (item.name === name) {
+        return { ...item, breakStart: new Date(), isRunning: false };
+      }
+      return { ...item };
     });
     setLogger((prevState) => ({ ...prevState, timers }));
   };
@@ -19,7 +20,7 @@ const ButtonPauseTask = ({
   return (
     <button
       onClick={pauseTask}
-      className="p-1 bg-neutral-300 dark:bg-neutral-600 rounded-full"
+      className="flex justify-center items-center w-8 h-8 bg-neutral-300 dark:bg-neutral-600 rounded-full"
     >
       <IoPause />
     </button>

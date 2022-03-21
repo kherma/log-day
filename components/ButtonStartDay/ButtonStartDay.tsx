@@ -2,16 +2,11 @@ import { TButtonStartDayProps } from "./types";
 
 const ButtonStartDay = ({ setLogger }: TButtonStartDayProps) => {
   const startDayAction = () => {
-    const timers = [
-      {
-        name: "misc",
-        started: new Date(),
-        isRunning: true,
-        breakStart: null,
-        breakEnds: null,
-      },
-    ];
-    setLogger({ timers, dayStarted: true, total: new Date() });
+    setLogger((prevState) => ({
+      ...prevState,
+      dayStarted: true,
+      total: new Date(),
+    }));
   };
   return (
     <button
