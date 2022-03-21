@@ -26,7 +26,9 @@ const Report = ({ logger, setIsModal, setLogger }: TReportProps) => {
               key={`${name}-${index}`}
               className="flex justify-around items-center py-2 w-full text-lg bg-neutral-100 dark:bg-neutral-900 rounded-lg"
             >
-              <p className="font-bold">{name}</p>
+              <p className="overflow-hidden max-w-[5rem] max-h-7 font-bold text-ellipsis">
+                {name}
+              </p>
               <p>{started}</p>
             </li>
           ))}
