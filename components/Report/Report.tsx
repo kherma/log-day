@@ -17,16 +17,16 @@ const Report = ({ logger, setIsModal, setLogger }: TReportProps) => {
   }, [logger]);
   return (
     <Modal>
-      <div className="grid grid-rows-[auto,1fr,auto] pt-4 h-full">
+      <div className="grid grid-rows-[auto,1fr,auto] p-4 h-full">
         <ButtonCloseModal setIsModal={setIsModal} />
-        <h2 className="text-2xl font-black text-center uppercase">Report</h2>
-        <ul className="flex overflow-auto flex-col gap-2 justify-start items-center p-4">
+        <h2 className="text-3xl font-black text-center uppercase">Report</h2>
+        <ul className="flex overflow-auto flex-col gap-2 justify-start items-center py-4 px-2">
           {report.map(({ name, started }, index) => (
             <li
               key={`${name}-${index}`}
-              className="flex justify-around items-center py-2 w-full text-lg bg-neutral-100 dark:bg-neutral-900 rounded-lg"
+              className="flex justify-between items-center p-2 w-full text-xl bg-neutral-100 dark:bg-neutral-900 rounded-lg"
             >
-              <p className="overflow-hidden max-w-[5rem] max-h-7 font-bold text-ellipsis">
+              <p className="overflow-hidden max-w-[10rem] font-bold text-ellipsis">
                 {name}
               </p>
               <p>{started}</p>

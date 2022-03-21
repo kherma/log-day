@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 
 const Layout = ({ page, children }: TLayoutProps) => {
   return (
-    <div className="grid grid-rows-[auto,1fr] h-screen">
+    <div className="grid overflow-hidden grid-rows-[auto,1fr] h-screen">
       <Head>
         <title>{`${pagesData[page].title} | logDAY`}</title>
         <meta name="description" content={pagesData[page].description} />

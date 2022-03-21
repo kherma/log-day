@@ -7,6 +7,8 @@ const ButtonStartDay = ({ setLogger }: TButtonStartDayProps) => {
         name: "misc",
         started: new Date(),
         isRunning: true,
+        breakStart: null,
+        breakEnds: null,
       },
     ];
     setLogger({ timers, dayStarted: true, total: new Date() });
