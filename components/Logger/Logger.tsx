@@ -1,10 +1,8 @@
 import { useState } from "react";
 import DayHeading from "../DayHeading/DayHeading";
 import { TLoggerProps } from "./types";
-import ButtonFinishDay from "../ButtonFinishDay/ButtonFinishDay";
 import ButtonShowReport from "../ButtonShowReport/ButtonShowReport";
-import ButtonCloseModal from "../ButtonCloseModal/ButtonCloseModal";
-import Modal from "../Modal/Modal";
+import Report from "../Report/Report";
 
 const Logger = ({ logger, setLogger }: TLoggerProps) => {
   const [isModal, setIsModal] = useState(false);
@@ -19,13 +17,7 @@ const Logger = ({ logger, setLogger }: TLoggerProps) => {
         </div>
       )}
       {isModal && (
-        <Modal>
-          <div className="flex flex-col justify-between items-center h-full">
-            <ButtonCloseModal setIsModal={setIsModal} />
-            <div></div>
-            <ButtonFinishDay setLogger={setLogger} />
-          </div>
-        </Modal>
+        <Report logger={logger} setIsModal={setIsModal} setLogger={setLogger} />
       )}
     </div>
   );
